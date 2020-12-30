@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="book_list_template" name="Book List">
+        <div id="wrap" class="container">
+            <h1>Books</h1>
+            <t t-foreach="book_recordset" t-as="book">
+                <did class="row">
+                    <span t-field="book.book_name" />
+                    <span t-field="book.book_isbn" />
+                    <span t-field="book.book_publisher" />
+                </did>
+            </t>
+        </div>
+    </template>
+
+</odoo>
+

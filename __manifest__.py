@@ -13,6 +13,7 @@
         'security/library_security.xml',
         'views/bookstore_book.xml',
         'views/library_menu.xml',
+        'views/book_list_template.xml',
     ],
     'demo': [
         'demo/demo.xml',
