@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="bookstore_root" name="Library" sequence="0"/>
+
+    <!--<act_window id="bookstore_book_action"
+                name="Book Library"
+                res_model="bookstore.book"
+                view_mode="tree,form"/>-->
+
+    <menuitem id="bookstore_book_menu"
+              name="Books"
+              parent="bookstore_root"
+              action="bookstore_book_action"
+              sequence="0"/>
+</odoo>
