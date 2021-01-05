@@ -27,10 +27,10 @@
             <field name="name">Library Book Rule User </field>
             <field ref="model_bookstore_book" name="model_id"/>
             <field name="domain_force">[('book_active', '=', True )]</field>
-            <field name="perm_write" eval="0"/>
+<!--            <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
             <field name="perm_read" eval="0"/>
-            <field name="perm_unlink" eval="0"/>
+            <field name="perm_unlink" eval="0"/>-->
             <field name="groups" eval="[(4, ref('bookstore.group_user'))]"/>
             <!--<field name="global" eval="1"/> -->
         </record>

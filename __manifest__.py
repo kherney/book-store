@@ -9,8 +9,8 @@
     'version': '13.0.0.2',
     'depends': ['base'],
     'data': [
-        'security/ir.model.access.csv',
         'security/library_security.xml',
+        'security/ir.model.access.csv',
         'views/bookstore_book.xml',
         'views/library_menu.xml',
         'views/book_list_template.xml',
