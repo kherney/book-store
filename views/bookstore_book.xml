@@ -2,7 +2,7 @@
   <data>
 
       <record id="bookstore.book_search" model="ir.ui.view">
-         <field name="name">"bookstore.search.view"</field>
+         <field name="name">bookstore.search.view</field>
          <field name="model">bookstore.book</field>
           <field name="arch" type="xml">
               <search string="Books Search">
