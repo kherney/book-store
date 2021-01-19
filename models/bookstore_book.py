@@ -7,11 +7,31 @@ from odoo.exceptions import Warning
 class Bookstore(models.Model):
     _name = 'bookstore.book'
     _description = "Books in Stock"
+    _order = "book_name, book_date_published desc"
+    _rec_name = "book_name"
+
     book_name = fields.Char('Title', required=True)
     book_isbn = fields.Char('ISBN')
-    book_active = fields.Boolean('Is Active', default=True)
+    book_type = fields.Selection([('paper', 'Paperback'),
+                                  ('hard', 'Hardcover'),
+                                  ('electronic', 'Electronic'),
+                                  ('other', 'Other')],
+                                 "Type")
+    book_notes = fields.Text("Internal Notes")
+    book_desc = fields.Html("Descriptions")
+
+    book_copies = fields.Integer(default=1)
+    avg_rating = fields.Float("Average rating", digits=(3, 2))
+    book_price = fields.Monetary('Price', 'currency_id')
+
     book_date_published = fields.Date()
+    last_borrow_date = fields.Datetime("Last Borrow On",
+                                       default=lambda self: fields.Datetime.now())
+
+    book_active = fields.Boolean('Is Active', default=True)
     book_image = fields.Binary('Cover')
+
+    currency_id = fields.Many2one(comodel_name='res.currency')
     book_publisher = fields.Many2one('res.partner', string="Publisher")
     book_ids_author = fields.Many2many('res.partner', string="Authors")
 
