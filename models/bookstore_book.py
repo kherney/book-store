@@ -33,7 +33,8 @@ class Bookstore(models.Model):
 
     currency_id = fields.Many2one(comodel_name='res.currency')
     book_publisher = fields.Many2one('res.partner', string="Publisher")
-    book_ids_author = fields.Many2many('res.partner', string="Authors")
+    book_author_ids = fields.Many2many('res.partner',
+                                       string="Authors")
 
     def _check_isbn(self):
         self.ensure_one()
