@@ -31,7 +31,7 @@
                               <field name="book_isbn"/>
                           </group>
                           <group name="group_right">
-                              <field name="book_ids_author" widget="many2many_tags"/>
+                              <field name="book_author_ids" widget="many2many_tags"/>
                               <field name="book_publisher"/>
                               <field name="book_date_published"/>
                           </group>
@@ -51,7 +51,7 @@
               <tree string="Books">
                   <field name="book_name"/>
                   <field name="book_isbn"/>
-                  <field name="book_ids_author" widget="many2many_tags"/>
+                  <field name="book_author_ids" widget="many2many_tags"/>
                   <field name="book_date_published" optional="show"/>
                   <field name="book_active" optional="hide"/>
                   <field name="book_publisher" optional="hide"/>
