@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report
+            id="report_bookstore_book_common"
+            model="bookstore.book"
+            string="Common Report"
+            name="bookstore.report_bookstore_book_view_common"
+            file="bookstore.report_bookstore_book_common"
+            report_type="qweb-pdf"/>
+
+    <template id="report_bookstore_book_view_common">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <p><span t-field="doc.book_name"/></p>
+                    </div>
+                </t>
+            </t>
+        </t>
+
+    </template>
+    <record id="my_custom_format" model="report.paperformat">
+         <field name="name">Book report letter</field>
+         <field name="default" eval="True"/>
+         <field name="format">custom</field>
+         <field name="page_height">90</field>
+         <field name="page_width">254</field>
+         <field name="orientation">Portrait</field>
+         <field name="margin_top">0</field>
+         <field name="margin_bottom">0</field>
+         <field name="margin_left">0</field>
+         <field name="margin_right">0</field>
+         <field name="header_line" eval="False"/>
+         <field name="header_spacing">0</field>
+        <field name="dpi">80</field>
+    </record>
+    <record id="report_bookstore_book_common" model="ir.actions.report">
+      <field name="paperformat_id" ref="base.paperformat_us" />
+    </record>
+
+</odoo>

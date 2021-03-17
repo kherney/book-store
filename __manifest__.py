@@ -14,6 +14,7 @@
         'views/bookstore_book.xml',
         'views/library_menu.xml',
         'views/book_list_template.xml',
+        'reports/book_report.xml',
     ],
     'demo': [
         'demo/demo.xml',
